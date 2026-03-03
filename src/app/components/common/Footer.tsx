@@ -1,232 +1,194 @@
 'use client';
+import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../ui/Button';
 import EditText from '../ui/EditText';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleEmailChange = (value: string) => {
+    setEmail(value);
+  };
+
+  const handleSubscribe = () => {
+    // Simple placeholder – you can replace with real logic
+    if (!email.trim()) return;
+    console.log('Subscribed with email:', email);
+    setEmail('');
+  };
+
   return (
-    <footer className="w-full bg-footer-background">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-12 space-y-10">
-        {/* Top link columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Get to Know Us */}
-          <div>
-            <h3 className="text-lg font-bold leading-normal text-[#55575c] font-['Lexend_Deca'] mb-4">
-              Get to Know Us
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm font-normal leading-normal text-[#595b5e] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/news"
-                  className="text-sm font-normal leading-normal text-[#535559] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  News &amp; Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="text-sm font-normal leading-normal text-[#56585c] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/investors"
-                  className="text-sm font-normal leading-normal text-[#5b5d60] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Investors
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm font-normal leading-normal text-[#595b5f] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
+    <footer
+      className="w-full bg-secondary-background border-t border-border-secondary bg-no-repeat bg-left-bottom"
+      style={{
+        backgroundImage: "url('/images/img_group_gray_900_58x58.png')",
+        // Move the decorative shape further left and down
+        backgroundSize: '260px',
+        backgroundPosition: '-160px 80%',
+      }}
+    >
+      <div className="w-full max-w-[1440px] mx-auto px-8 py-12">
+        <div className="flex flex-col lg:flex-row gap-10">
+          {/* Left: Nav Columns */}
+          <div className="flex flex-1 gap-6 items-start">
+            <div className="flex flex-1 flex-wrap gap-x-12 gap-y-8">
+              {/* Get to Know Us */}
+              <div className="space-y-4 min-w-[140px]">
+                <h3 className="text-xl font-bold text-text-secondary">Get to Know Us</h3>
+                <div className="space-y-3">
+                  {['About Us', 'News & Blog', 'Careers', 'Investors', 'Contact Us'].map((item) => (
+                    <Link
+                      key={item}
+                      href="#"
+                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Customer Service */}
+              <div className="space-y-4 min-w-[160px]">
+                <h3 className="text-xl font-bold text-text-secondary">Customer Service</h3>
+                <div className="space-y-3">
+                  {[
+                    'Help Center',
+                    "FAQ's",
+                    'Franchise',
+                    'Feedback',
+                    'Become a Vendor',
+                    'Payment Method',
+                  ].map((item) => (
+                    <Link
+                      key={item}
+                      href="#"
+                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Legal */}
+              <div className="space-y-4 min-w-[120px]">
+                <h3 className="text-xl font-bold text-text-secondary">Legal</h3>
+                <div className="space-y-3">
+                  {['Privacy Policy', 'Terms of Use', 'Legal', 'Sitemap'].map((item) => (
+                    <Link
+                      key={item}
+                      href="#"
+                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Orders & Returns */}
+              <div className="space-y-4 min-w-[180px]">
+                <h3 className="text-xl font-bold text-text-secondary">Orders & Returns</h3>
+                <div className="space-y-3">
+                  {[
+                    'Track Order',
+                    'Shipping & Delivery',
+                    'Return & Exchange',
+                    'Price Match Guarantee',
+                  ].map((item) => (
+                    <Link
+                      key={item}
+                      href="#"
+                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Customer Service */}
-          <div>
-            <h3 className="text-lg font-bold leading-normal text-[#56595d] font-['Lexend_Deca'] mb-4">
-              Customer Service
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/help"
-                  className="text-sm font-normal leading-normal text-[#595b5f] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-sm font-normal leading-normal text-[#54565a] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  FAQ&apos;s
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/franchise"
-                  className="text-sm font-normal leading-normal text-[#545659] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Franchise
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/feedback"
-                  className="text-sm font-normal leading-normal text-[#55575a] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Feedback
-                </Link>
-              </li>
-              <li>
-                <span className="text-sm font-normal leading-normal text-[#5e6063] font-['Lexend_Deca']">
-                  Become a Vendor
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-lg font-bold leading-normal text-[#4d5055] font-['Lexend_Deca'] mb-4">
-              Legal
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm font-normal leading-normal text-[#5d5f63] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm font-normal leading-normal text-[#525457] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Terms of Use
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal"
-                  className="text-sm font-normal leading-normal text-[#56585b] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Legal
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sitemap"
-                  className="text-sm font-normal leading-normal text-[#505356] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                >
-                  Sitemap
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Orders & Returns + Newsletter (top of last column) */}
-          <div className="space-y-6">
+          {/* Right: Newsletter + Social */}
+          <div className="w-full lg:w-[320px] flex-shrink-0 space-y-5">
             <div>
-              <h3 className="text-lg font-bold leading-normal text-[#585a5e] font-['Lexend_Deca'] mb-4">
-                Orders &amp; Returns
-              </h3>
-              <ul className="space-y-2">
-                <li>
+              <h4 className="text-xl font-bold text-text-secondary mb-1">Let&apos;s keep in touch</h4>
+              <p className="text-base text-text-muted">Get recommendations, tips, updates and more.</p>
+            </div>
+
+            {/* Email Subscribe Section */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full items-stretch">
+              <EditText
+                placeholder="Enter your email address"
+                value={email}
+                onChange={handleEmailChange}
+                text_font_size="text-base"
+                text_font_family="Inter"
+                text_font_weight="font-normal"
+                text_line_height="leading-normal"
+                text_color="text-text-primary"
+                fill_background_color="bg-input-background"
+                border_border="border border-border-primary"
+                border_border_radius="rounded-full"
+                padding="t=16px,r=20px,b=16px,l=20px"
+                containerClassName="flex-1 w-full"
+              />
+
+              <button
+                onClick={handleSubscribe}
+                className="bg-primary-dark text-white text-xl font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-primary-dark/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap min-w-[200px]"
+              >
+                Subscribe
+              </button>
+            </div>
+
+            {/* Social Icons (reuse previous paths) */}
+            <div>
+              <h4 className="text-base font-normal text-text-secondary mb-3">Stay Connected</h4>
+              <div className="flex items-center gap-5">
+                {[
+                  { src: '/images/img_image_12x14.png', alt: 'Facebook', w: 22, h: 22 },
+                  { src: '/images/img_image_14x14.png', alt: 'Twitter', w: 22, h: 22 },
+                  { src: '/images/img_image_10x14.png', alt: 'Instagram', w: 22, h: 22 },
+                  { src: '/images/img_image_1.png', alt: 'LinkedIn', w: 22, h: 22 },
+                  { src: '/images/img_image_2.png', alt: 'YouTube', w: 22, h: 22 },
+                ].map(({ src, alt, w, h }) => (
                   <Link
-                    href="/track-order"
-                    className="text-sm font-normal leading-normal text-[#5f6164] hover:text-primary-background transition-colors font-['Lexend_Deca']"
+                    key={alt}
+                    href="#"
+                    className="hover:opacity-75 transition-opacity flex-shrink-0"
                   >
-                    Track Order
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={w}
+                      height={h}
+                      style={{ width: w, height: h, objectFit: 'contain' }}
+                    />
                   </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/shipping"
-                    className="text-sm font-normal leading-normal text-[#525458] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                  >
-                    Shipping &amp; Delivery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/returns"
-                    className="text-sm font-normal leading-normal text-[#525457] hover:text-primary-background transition-colors font-['Lexend_Deca']"
-                  >
-                    Return &amp; Exchange
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-sm font-normal leading-normal text-[#55575a] font-['Lexend_Deca']">
-                    Price Match Guarantee
-                  </span>
-                </li>
-              </ul>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom row: newsletter + social + copyright */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 border-t border-[#e1e2e5] pt-8">
-          {/* Newsletter */}
-          <div className="w-full lg:max-w-xl">
-            <h3 className="text-xs font-bold leading-tight text-[#595b5f] font-['Inter']">
-              Let&apos;s keep in touch
-            </h3>
-            <p className="text-sm font-normal leading-normal text-text-muted font-['Inter'] mt-3">
-              Get recommendations, tips, updates and more.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mt-4">
-              <EditText
-                placeholder="Enter your email address"
-                className="flex-1"
-              />
-              <Button
-                text="Subscribe"
-                className="text-sm font-bold leading-tight text-primary-foreground bg-primary-background border border-primary-background rounded-lg px-5 py-3"
-              />
-            </div>
-          </div>
-
-          {/* Social + copyright */}
-          <div className="w-full lg:w-auto flex flex-col items-start lg:items-end gap-4">
-            <div className="flex flex-col items-start lg:items-end gap-2 w-full">
-              <span className="text-sm font-normal leading-normal text-[#585a5e] font-['Lexend_Deca']">
-                Stay Connected
-              </span>
-              <div className="flex flex-wrap gap-3 text-sm font-normal text-[#585a5e] font-['Lexend_Deca']">
-                <span>Facebook</span>
-                <span>Twitter</span>
-                <span>Instagram</span>
-                <span>LinkedIn</span>
-                <span>YouTube</span>
-              </div>
-            </div>
-
-            <p className="text-sm font-normal leading-normal text-[#646669] font-['Lexend_Deca'] mt-2">
+        {/* Footer Bottom */}
+        <div className="border-t border-border-secondary mt-10 pt-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-base text-text-muted">
               Copyright © 2025 Petoty, All rights reserved.
             </p>
+            <div className="flex-shrink-0">
+              <Image
+                src="/images/img_image_59.png"
+                alt="Payment Methods"
+                width={302}
+                height={18}
+                style={{ width: 302, height: 18, objectFit: 'contain' }}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #52002d;
+    --primary-foreground: #ffffff;
+    --primary-light: #810955;
+    --primary-dark: #52002d;
+
+    /* Secondary Colors */
+    --secondary-background: #ffffff;
+    --secondary-foreground: #000000;
+    --secondary-light: #feffff;
+    --secondary-dark: #111111;
+
+    /* Accent Colors */
+    --accent-color: #d0473e;
+    --accent-foreground: #ffffff;
+    --accent-light: #14854e;
+    --accent-dark: #d0473e;
+
+    /* Border Colors */
+    --border-primary: #dbe0e4;
+    --border-secondary: #00000084;
+    --border-light: #00000011;
+    --border-dark: #0000007c;
+
+    /* Text Colors */
+    --text-primary: #000000;
+    --text-secondary: #525457;
+    --text-muted: #92969f;
+    --text-accent: #1d2128;
+
+    /* Background Colors */
+    --bg-main: #ffffff;
+    --bg-card: #feffff;
+    --bg-overlay: #0000004c;
+    --bg-light: #f4efeb;
+
+    /* Component Colors */
+    --header-bg: #ffffff;
+    --button-bg: #52002d;
+    --input-bg: #feffff;
+    --footer-bg: #ffffff;
+
+    /* Typography Variables */
+    --font-size-xs: 8px;
+    --font-size-sm: 11px;
+    --font-size-base: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 54px;
+
+    /* Font Weight Variables */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line Height Variables */
+    --line-height-tight: 14px;
+    --line-height-normal: 18px;
+    --line-height-relaxed: 25px;
+    --line-height-loose: 33px;
+
+    /* Spacing Variables */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-base: 12px;
+    --spacing-lg: 18px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 36px;
+    --spacing-3xl: 44px;
+
+    /* Border Radius Variables */
+    --radius-none: 0px;
+    --radius-sm: 6px;
+    --radius-base: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* Layout Variables */
+    --width-auto: auto;
+    --width-full: 100%;
+    --height-auto: auto;
+  }
+}

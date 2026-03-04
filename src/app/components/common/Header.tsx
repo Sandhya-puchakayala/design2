@@ -80,16 +80,80 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Right side: header icons */}
-          <div className="flex justify-end">
-            <Image
-              src="/images/img_shopping images.png"
-              alt="Header icons"
-              width={168}
-              height={28}
-              className="w-auto h-[24px] sm:h-[26px] lg:h-[28px] object-contain"
-            />
-          </div>
+          {/* Right side: header icons as interactive links */}
+          <nav className="flex items-center justify-end gap-6 text-primary-dark">
+            <Link
+              href="/account"
+              aria-label="Account"
+              className="hover:text-primary-background transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              >
+                <circle cx="12" cy="8" r="3.5" />
+                <path d="M5 19.5C5.8 16 8.6 14 12 14s6.2 2 7 5.5" />
+              </svg>
+            </Link>
+
+            <Link
+              href="/messages"
+              aria-label="Messages"
+              className="hover:text-primary-background transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              >
+                <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+                <path d="M6 8.5 10.5 11a3 3 0 0 0 3 0L18 8.5" />
+              </svg>
+            </Link>
+
+            <Link
+              href="/wishlist"
+              aria-label="Wishlist"
+              className="hover:text-primary-background transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              >
+                <path d="M12 20s-5.5-3.2-8.1-6C2.7 11.7 3 8.4 5.5 6.8 7.2 5.7 9.3 6 10.7 7.4L12 8.7l1.3-1.3C14.7 6 16.8 5.7 18.5 6.8 21 8.4 21.3 11.7 20.1 14c-2.6 2.8-8.1 6-8.1 6Z" />
+              </svg>
+            </Link>
+
+            <Link
+              href="/cart"
+              aria-label="Cart"
+              className="hover:text-primary-background transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              >
+                <circle cx="9" cy="19" r="1.6" />
+                <circle cx="18" cy="19" r="1.6" />
+                <path d="M3 4h2l1.5 10.5H19a1 1 0 0 0 1-.8l1.2-7H6.1" />
+              </svg>
+            </Link>
+          </nav>
         </div>
 
         {/* Mobile contact details */}

@@ -1,5 +1,6 @@
 'use client';
-import Image from'next/image';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Category {
   id: string;
@@ -49,7 +50,10 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
                 ) : (
                   <>
                     {/* Dogs */}
-                    <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4">
+                    <Link
+                      href="/dogs"
+                      className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4 hover:opacity-90 transition-opacity"
+                    >
                       <Image
                         src="/images/img_icons_dog_1.png"
                         alt="Dogs"
@@ -60,13 +64,16 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
                       <span className="text-lg sm:text-2xl lg:text-[28px] font-medium leading-tight lg:leading-[34px] text-text-primary font-['Roboto']">
                         Dogs
                       </span>
-                    </div>
+                    </Link>
 
                     {/* Vertical Line */}
                     <div className="hidden lg:block w-[4px] h-[80px] bg-[#00000066] rounded-[2px]"></div>
 
                     {/* Cats */}
-                    <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4">
+                    <Link
+                      href="/cats"
+                      className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4 hover:opacity-90 transition-opacity"
+                    >
                       <Image
                         src="/images/img_icons_cat_1.png"
                         alt="Cats"
@@ -77,13 +84,16 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
                       <span className="text-lg sm:text-2xl lg:text-[28px] font-medium leading-tight lg:leading-[34px] text-text-primary font-['Roboto']">
                         Cats
                       </span>
-                    </div>
+                    </Link>
 
                     {/* Vertical Line */}
                     <div className="hidden lg:block w-[4px] h-[80px] bg-[#00000066] rounded-[2px]"></div>
 
                     {/* Birds */}
-                    <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4">
+                    <Link
+                      href="/birds"
+                      className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4 hover:opacity-90 transition-opacity"
+                    >
                       <Image
                         src="/images/img_icons_bird_2.png"
                         alt="Birds"
@@ -94,13 +104,16 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
                       <span className="text-lg sm:text-2xl lg:text-[28px] font-medium leading-tight lg:leading-[34px] text-text-primary font-['Roboto']">
                         Birds
                       </span>
-                    </div>
+                    </Link>
 
                     {/* Vertical Line */}
                     <div className="hidden lg:block w-[4px] h-[80px] bg-[#00000066] rounded-[2px]"></div>
 
                     {/* Fishes */}
-                    <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4">
+                    <Link
+                      href="/fishes"
+                      className="flex flex-col items-center w-full sm:w-1/2 lg:w-auto lg:flex-1 p-4 hover:opacity-90 transition-opacity"
+                    >
                       <Image
                         src="/images/img_icons_fish_2.png"
                         alt="Fishes"
@@ -111,7 +124,7 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
                       <span className="text-lg sm:text-2xl lg:text-[28px] font-medium leading-tight lg:leading-[34px] text-text-primary font-['Roboto']">
                         Fishes
                       </span>
-                    </div>
+                    </Link>
                   </>
                 )}
               </div>

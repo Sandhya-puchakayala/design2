@@ -164,11 +164,11 @@ const PopularPicksSection = ({ products, loading }: PopularPicksSectionProps) =>
                   />
                   
                   {/* Badge */}
-                  {product.badge && (
+                   {product.badge && (
                     <div className={`absolute top-3 left-3 ${product.badgeColor} rounded-2xl px-2 py-1 flex items-center gap-1`}>
                       {product.badge === 'Limited Stock' && (
                         <Image
-                          src="/images/img_vector.png"
+                          src="/images/img_import.png"
                           alt="Limited stock icon"
                           width={12}
                           height={12}
@@ -179,7 +179,7 @@ const PopularPicksSection = ({ products, loading }: PopularPicksSectionProps) =>
                         {product.badge}
                       </span>
                     </div>
-                  )}
+                  )} 
                   
                   {/* Discount Badge */}
                   {product.discount && (

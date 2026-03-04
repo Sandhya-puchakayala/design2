@@ -4,7 +4,7 @@ import Image from 'next/image';
 const HeroSection = () => {
   return (
     <section className="w-full bg-background-main">
-      <div className="w-full max-w-[1440px] mx-auto">
+      <div className="w-full ">
         {/* Navigation Bar */}
         <div className="w-full bg-background-light">
           <div className="px-4 sm:px-6 lg:px-14 py-6">
@@ -12,34 +12,34 @@ const HeroSection = () => {
               
               {/* Navigation Menu - Hide on mobile, show on desktop */}
               <nav className="hidden lg:flex items-center gap-6 xl:gap-9">
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   DOGS
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   CATS
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   BIRDS
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   FISHES
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   BRANDS
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   SHOP BY BREED
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   SERVICES
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   PAWSCRIPTION
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   PAWSSURANCE
                 </a>
-                <a href="#" className="text-xs font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
+                <a href="#" className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors">
                   COMMUNITY
                 </a>
               </nav>

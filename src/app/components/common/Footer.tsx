@@ -20,28 +20,34 @@ const Footer = () => {
 
   return (
     <footer
-      className="w-full bg-secondary-background border-t border-border-secondary bg-no-repeat bg-left-bottom"
-      style={{
-        backgroundImage: "url('/images/img_group_gray_900_58x58.png')",
-        // Move the decorative shape further left and down
-        backgroundSize: '260px',
-        backgroundPosition: '-160px 80%',
-      }}
+      className="w-full bg-secondary-background border-t border-border-secondary bg-no-repeat"
+    //   style={{
+    //     backgroundImage: "url('/images/img_group_gray_900_58*58.png')",
+    //     backgroundSize: '240px',
+    //     backgroundPosition: 'left 20px',
+    //   }}
     >
-      <div className="w-full max-w-[1440px] mx-auto px-8 py-12">
+      <div className="w-full max-w-[1440px] mx-auto px-12 py-16">
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Left: Nav Columns */}
           <div className="flex flex-1 gap-6 items-start">
-            <div className="flex flex-1 flex-wrap gap-x-12 gap-y-8">
+            <div className="flex flex-1 flex-wrap gap-x-20 gap-y-10">
               {/* Get to Know Us */}
-              <div className="space-y-4 min-w-[140px]">
-                <h3 className="text-xl font-bold text-text-secondary">Get to Know Us</h3>
+              <div
+                className="space-y-4 min-w-[140px] pl-20 bg-no-repeat relative"
+                style={{
+                  backgroundImage: "url('/images/Main_Design.png')",
+                  backgroundSize: "220px",
+                  backgroundPosition: "-40px 10px",
+                }}
+              >
+                <h3 className="text-lg font-semibold text-text-secondary">Get to Know Us</h3>
                 <div className="space-y-3">
                   {['About Us', 'News & Blog', 'Careers', 'Investors', 'Contact Us'].map((item) => (
                     <Link
                       key={item}
                       href="#"
-                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                      className="block text-sm text-text-secondary hover:text-primary-background transition-colors"
                     >
                       {item}
                     </Link>
@@ -51,7 +57,7 @@ const Footer = () => {
 
               {/* Customer Service */}
               <div className="space-y-4 min-w-[160px]">
-                <h3 className="text-xl font-bold text-text-secondary">Customer Service</h3>
+                <h3 className="text-lg font-semibold text-text-secondary">Customer Service</h3>
                 <div className="space-y-3">
                   {[
                     'Help Center',
@@ -64,7 +70,7 @@ const Footer = () => {
                     <Link
                       key={item}
                       href="#"
-                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                      className="block text-sm text-text-secondary hover:text-primary-background transition-colors"
                     >
                       {item}
                     </Link>
@@ -74,13 +80,13 @@ const Footer = () => {
 
               {/* Legal */}
               <div className="space-y-4 min-w-[120px]">
-                <h3 className="text-xl font-bold text-text-secondary">Legal</h3>
+                <h3 className="text-lg font-semibold text-text-secondary">Legal</h3>
                 <div className="space-y-3">
                   {['Privacy Policy', 'Terms of Use', 'Legal', 'Sitemap'].map((item) => (
                     <Link
                       key={item}
                       href="#"
-                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                      className="block text-sm text-text-secondary hover:text-primary-background transition-colors"
                     >
                       {item}
                     </Link>
@@ -90,7 +96,7 @@ const Footer = () => {
 
               {/* Orders & Returns */}
               <div className="space-y-4 min-w-[180px]">
-                <h3 className="text-xl font-bold text-text-secondary">Orders & Returns</h3>
+                <h3 className="text-lg font-semibold text-text-secondary">Orders & Returns</h3>
                 <div className="space-y-3">
                   {[
                     'Track Order',
@@ -101,7 +107,7 @@ const Footer = () => {
                     <Link
                       key={item}
                       href="#"
-                      className="block text-base font-normal text-text-secondary hover:text-primary-background transition-colors"
+                      className="block text-sm text-text-secondary hover:text-primary-background transition-colors"
                     >
                       {item}
                     </Link>
@@ -112,7 +118,8 @@ const Footer = () => {
           </div>
 
           {/* Right: Newsletter + Social */}
-          <div className="w-full lg:w-[320px] flex-shrink-0 space-y-5">
+          {/* <div className="w-full lg:w-[320px] flex-shrink-0 space-y-5"> */}
+          <div className="w-full lg:w-[340px] flex-shrink-0 space-y-6">
             <div>
               <h4 className="text-xl font-bold text-text-secondary mb-1">Let&apos;s keep in touch</h4>
               <p className="text-base text-text-muted">Get recommendations, tips, updates and more.</p>
@@ -132,13 +139,14 @@ const Footer = () => {
                 fill_background_color="bg-input-background"
                 border_border="border border-border-primary"
                 border_border_radius="rounded-full"
-                padding="t=16px,r=20px,b=16px,l=20px"
+                // padding="t=16px,r=20px,b=16px,l=20px"
+                padding="t=12px,r=18px,b=12px,l=18px"
                 containerClassName="flex-1 w-full"
               />
 
               <button
                 onClick={handleSubscribe}
-                className="bg-primary-dark text-white text-xl font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-primary-dark/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap min-w-[200px]"
+                className="bg-primary-dark text-white text-base font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-primary-dark/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap min-w-[200px]"
               >
                 Subscribe
               </button>
@@ -175,7 +183,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-border-secondary mt-10 pt-5">
+        <div className="border-t border-border-secondary mt-14 pt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-base text-text-muted">
               Copyright © 2025 Petoty, All rights reserved.
@@ -184,15 +192,15 @@ const Footer = () => {
               <Image
                 src="/images/img_image_59.png"
                 alt="Payment Methods"
-                width={302}
-                height={18}
+                width={260}
+                height={16}
                 style={{ width: 302, height: 18, objectFit: 'contain' }}
               />
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

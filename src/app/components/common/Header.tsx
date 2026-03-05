@@ -186,6 +186,55 @@ const Header = () => {
           </div>
         </nav>
       </div>
+
+      {/* ── Navigation Bar ── */}
+      <div className="w-full bg-background-light border-t border-border-light">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-14 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-wrap">
+              {[
+                { label: 'DOGS', href: '/dogs' },
+                { label: 'CATS', href: '/cats' },
+                { label: 'BIRDS', href: '/birds' },
+                { label: 'FISHES', href: '/fishes' },
+                { label: 'BRANDS', href: '#' },
+                { label: 'SHOP BY BREED', href: '#' },
+                { label: 'SERVICES', href: '#' },
+                { label: 'PAWSCRIPTION', href: '#' },
+                { label: 'PAWSSURANCE', href: '#' },
+                { label: 'COMMUNITY', href: '#' },
+              ].map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="text-sm lg:text-base font-bold leading-relaxed text-text-accent font-['Nunito'] hover:text-primary-background transition-colors whitespace-nowrap"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+            {/* Mobile: show abbreviated nav */}
+            <nav className="flex lg:hidden items-center gap-4 overflow-x-auto pb-1">
+              {['DOGS', 'CATS', 'BIRDS', 'FISHES'].map((label) => (
+                <Link
+                  key={label}
+                  href={`/${label.toLowerCase()}`}
+                  className="text-sm font-bold text-text-accent font-['Nunito'] whitespace-nowrap hover:text-primary-background transition-colors"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+            {/* Search icon */}
+            <button className="flex-shrink-0" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   )
 }

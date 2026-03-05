@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Product {
   id: string;
@@ -47,13 +48,13 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
     <section className="w-full bg-background-main py-8 md:py-12">
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[115px]">
         <div className="border border-[#00000089] rounded-3xl p-6 lg:p-[30px] mb-[76px]">
-          
+
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
             <h2 className="text-xl sm:text-2xl lg:text-[28px] font-medium leading-tight lg:leading-[33px] text-text-primary font-['Roboto']">
               Showing 48 products
             </h2>
-            
+
             <div className="flex items-center gap-2 bg-[#00000070] rounded-xl px-4 py-2">
               <span className="text-sm sm:text-lg lg:text-[21px] font-medium leading-tight lg:leading-[25px] text-primary-foreground font-['Roboto']">
                 Sort by
@@ -65,12 +66,12 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-[14px]">
-            
+
             {/* Sidebar Filters */}
             <div className="w-full lg:w-auto lg:flex-shrink-0">
               <div className="bg-background-main border border-[#0000007c] rounded-lg p-3 lg:p-[14px]">
                 <div className="flex flex-col gap-6 lg:gap-[32px]">
-                  
+
                   {/* Selected Filter */}
                   <div className="flex items-center gap-4">
                     <div className="flex flex-col items-center">
@@ -142,11 +143,11 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
                 </div>
               ) : (
                 <div className="space-y-6 lg:space-y-[18px]">
-                  
+
                   {/* First Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[18px]">
                     {showcaseProducts.slice(0, 4).map((product) => (
-                      <div key={product.id} className="flex flex-col items-center">
+                      <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center cursor-pointer hover:opacity-90 transition-opacity">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -169,14 +170,14 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
                         <span className="text-xs lg:text-xs font-semibold text-text-primary font-['Nunito']">
                           {product.price}
                         </span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Second Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[18px]">
                     {showcaseProducts.slice(4, 8).map((product) => (
-                      <div key={product.id} className="flex flex-col items-center">
+                      <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center cursor-pointer hover:opacity-90 transition-opacity">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -199,14 +200,14 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
                         <span className="text-xs lg:text-xs font-semibold text-text-primary font-['Nunito']">
                           {product.price}
                         </span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Third Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[18px]">
                     {showcaseProducts.slice(8, 12).map((product) => (
-                      <div key={product.id} className="flex flex-col items-center">
+                      <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center cursor-pointer hover:opacity-90 transition-opacity">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -229,14 +230,14 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
                         <span className="text-xs lg:text-xs font-semibold text-text-primary font-['Nunito']">
                           {product.price}
                         </span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Fourth Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[18px]">
                     {showcaseProducts.slice(12, 16).map((product) => (
-                      <div key={product.id} className="flex flex-col items-center">
+                      <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center cursor-pointer hover:opacity-90 transition-opacity">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -259,7 +260,7 @@ const ProductShowcaseSection = ({ products, loading }: ProductShowcaseSectionPro
                         <span className="text-xs lg:text-xs font-semibold text-text-primary font-['Nunito']">
                           {product.price}
                         </span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

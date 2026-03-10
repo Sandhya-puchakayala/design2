@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import HeroSection from './HeroSection';
 import ShopNowSection from './ShopNowSection';
-import ProductShowcaseSection from './ProductShowcaseSection';
+
 import PopularPicksSection from './PopularPicksSection';
 import TrustSection from './TrustSection';
 import Header from './components/common/Header';
@@ -114,10 +114,7 @@ export default function HomePage() {
         <ShopNowSection 
           categories={categories}
           loading={loading}
-        />
-        <ProductShowcaseSection 
           products={products}
-          loading={loading}
         />
         <PopularPicksSection 
           products={products}

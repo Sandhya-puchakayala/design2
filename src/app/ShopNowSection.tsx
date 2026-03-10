@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import ProductShowcaseSection from './ProductShowcaseSection';
 
 interface Category {
   id: string;
@@ -8,12 +9,21 @@ interface Category {
   icon: string;
 }
 
+interface Product {
+  id: string;
+  name: string;
+  price: string;
+  rating: number;
+  image: string;
+}
+
 interface ShopNowSectionProps {
   categories: Category[];
   loading: boolean;
+  products: Product[];
 }
 
-const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
+const ShopNowSection = ({ categories, loading, products }: ShopNowSectionProps) => {
   const careItems = [
     { name: 'Food', icon: '/images/img_icons_dry_food_2.png' },
     { name: 'Treats & Chews', icon: '/images/img_icons_treats_and.png' },
@@ -22,8 +32,8 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
   ]
 
   return (
-    <section className="w-full bg-background-main py-8 md:py-12">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[84px]">
+    <section className="w-full bg-background-main pb-8 md:pb-12">
+      <div className="w-full px-4 sm:px-6 lg:px-[70px]">
         <div className="bg-background-main border-2 border-[#0000003a] rounded-lg p-6 lg:p-[26px]">
           
           {/* Shop Now Title */}
@@ -34,7 +44,7 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
           </div>
 
           {/* Categories Section */}
-          <div className="mb-8 lg:mb-[18px]">
+          <div className="mb-0">
             <div className="border border-[#0000006d] rounded-3xl p-1 lg:p-[6px]">
               <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-0">
                 
@@ -132,35 +142,36 @@ const ShopNowSection = ({ categories, loading }: ShopNowSectionProps) => {
           </div>
 
           {/* Care & Essentials Section */}
-          <div className="text-center">
-            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-medium leading-tight lg:leading-[31px] text-text-primary font-['Roboto'] mb-6">
-              Care & Essentials for Dogs
+          <div className="border border-[#00000099] rounded-3xl p-4 lg:p-[18px]">
+            <h3 className="text-left text-xl sm:text-2xl lg:text-[26px] font-medium leading-tight lg:leading-[31px] text-text-primary font-['Roboto'] mb-4">
+              Care &amp; Essentials for Dogs
             </h3>
-
-            <div className="border border-[#00000099] rounded-3xl p-4 lg:p-[18px]">
-              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-0">
-                {careItems.map((item, index) => (
-                  <div key={item.name} className="flex items-center w-full sm:w-1/2 lg:w-auto lg:flex-1">
-                    <div className="flex flex-col items-center flex-1 p-4">
-                      <Image
-                        src={item.icon}
-                        alt={item.name}
-                        width={120}
-                        height={120}
-                        className="w-[80px] h-[80px] lg:w-[120px] lg:h-[120px] object-contain mb-4"
-                      />
-                      <span className="text-lg sm:text-2xl lg:text-[26px] font-medium leading-tight lg:leading-[31px] text-text-primary font-['Roboto'] text-center">
-                        {item.name}
-                      </span>
-                    </div>
-                    {index < careItems.length - 1 && (
-                      <div className="hidden lg:block w-[4px] h-[80px] bg-[#00000066] rounded-[2px] ml-4"></div>
-                    )}
+            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-0">
+              {careItems.map((item, index) => (
+                <div key={item.name} className="flex items-center w-full sm:w-1/2 lg:w-auto lg:flex-1">
+                  <div className="flex flex-col items-center flex-1 p-4">
+                    <Image
+                      src={item.icon}
+                      alt={item.name}
+                      width={120}
+                      height={120}
+                      className="w-[80px] h-[80px] lg:w-[120px] lg:h-[120px] object-contain mb-4"
+                    />
+                    <span className="text-lg sm:text-2xl lg:text-[26px] font-medium leading-tight lg:leading-[31px] text-text-primary font-['Roboto'] text-center">
+                      {item.name}
+                    </span>
                   </div>
-                ))}
-              </div>
+                  {index < careItems.length - 1 && (
+                    <div className="hidden lg:block w-[4px] h-[80px] bg-[#00000066] rounded-[2px] ml-4"></div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
+
+          {/* Product Showcase — inside the same bordered box */}
+          <ProductShowcaseSection products={products} loading={loading} />
+
         </div>
       </div>
     </section>

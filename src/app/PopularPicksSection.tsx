@@ -93,18 +93,18 @@ const PopularPicksSection = ({ products, loading }: PopularPicksSectionProps) =>
   ]
 
   return (
-    <section className="w-full bg-background-main py-8 md:py-12 mt-[90px]">
+    <section className="w-full bg-background-main py-8 md:py-12">
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-7">
         
         {/* Section Title */}
-        <div className="text-center mb-12 lg:mb-[143px]">
+        <div className="text-center mb-8 lg:mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-semibold leading-tight lg:leading-[74px] text-secondary-dark font-['Nunito']">
             Popular Picks
           </h2>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-8 lg:mb-[131px]">
+        <div className="flex justify-center mb-8 lg:mb-12">
           <div className="flex items-center gap-2 lg:gap-4">
             {tabs.map((tab, index) => (
               <div key={tab} className="flex items-center">

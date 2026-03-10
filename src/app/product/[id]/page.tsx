@@ -85,8 +85,7 @@ export default function ProductDetailPage() {
                             </div>
 
                             {/* Main image */}
-                            {/* <div className="relative w-[300px] h-[320px] sm:w-[360px] sm:h-[380px] lg:w-[460px] lg:h-[460px] bg-background-card border border-border-light rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0"> */}
-                            <div className="relative w-[380px] h-[400px] sm:w-[480px] sm:h-[500px] lg:w-[580px] lg:h-[580px] bg-background-card border border-border-light rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0">
+                            <div className="relative w-[380px] h-[548px] sm:w-[480px] sm:h-[548px] lg:w-[648px] lg:h-[648px] bg-background-card border border-border-light rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <button
                                     onClick={() => setWishlist(!wishlist)}
                                     className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-110 transition-transform"

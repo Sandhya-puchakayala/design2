@@ -7,8 +7,8 @@ import EditText from '../ui/EditText';
 const Footer = () => {
   const [email, setEmail] = useState('');
 
-  const handleEmailChange = (value: string) => {
-    setEmail(value);
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
   };
 
   const handleSubscribe = () => {
@@ -126,27 +126,18 @@ const Footer = () => {
             </div>
 
             {/* Email Subscribe Section */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full items-stretch">
-              <EditText
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <input
+                type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={handleEmailChange}
-                text_font_size="text-base"
-                text_font_family="Inter"
-                text_font_weight="font-normal"
-                text_line_height="leading-normal"
-                text_color="text-text-primary"
-                fill_background_color="bg-input-background"
-                border_border="border border-border-primary"
-                border_border_radius="rounded-full"
-                // padding="t=16px,r=20px,b=16px,l=20px"
-                padding="t=12px,r=18px,b=12px,l=18px"
-                containerClassName="flex-1 w-full"
+                className="flex-1 w-full h-[52px] text-base font-normal text-text-primary bg-input-background border border-border-primary rounded-full px-5 outline-none focus:ring-2 focus:ring-primary-dark/30 transition-all"
               />
 
               <button
                 onClick={handleSubscribe}
-                className="bg-primary-dark text-white text-base font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-primary-dark/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap min-w-[200px]"
+                className="bg-primary-dark text-white text-base font-semibold px-8 h-[52px] rounded-full shadow-lg hover:bg-primary-dark/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap min-w-[140px]"
               >
                 Subscribe
               </button>
